@@ -13,6 +13,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -35,7 +36,7 @@ fun HomeScreen(
     Scaffold(
         modifier = modifier,
         topBar = {
-            androidx.compose.material3.TopAppBar(
+            TopAppBar(
                 title = {
                     Text(
                         text = "LiveVibe",
@@ -68,18 +69,9 @@ fun HomeScreen(
                     color = MaterialTheme.colorScheme.error
                 )
                 is HomeUiState.Success -> {
-                    Text(
-                        text = "Shows: ${state.pastShows.size}",
-                        color = Color.White
-                    )
-                    Text(
-                        text = "Artistas: ${state.followedArtists.size}",
-                        color = Color.White
-                    )
-                    Text(
-                        text = "Próximos shows: ${state.upcomingShows.size}",
-                        color = Color.White
-                    )
+                    Text(text = "Shows: ${state.pastShows.size}", color = Color.White)
+                    Text(text = "Artistas: ${state.followedArtists.size}", color = Color.White)
+                    Text(text = "Próximos shows: ${state.upcomingShows.size}", color = Color.White)
                 }
             }
         }
